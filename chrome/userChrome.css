@@ -1,13 +1,11 @@
-/* Firefox Alphaz v 1.0 */
+/* Firefox Alphaz v 1.2 */
 /* Original theme by Tagggar, Add. credits to Suchacat */
 /* Current modification by KiKaraage */
 /* Source: https://github.com/KiKaraage/Firefox-Alphaz/ */
 
-@import url("urlbar.css");
-@import url("popup-search.css");
-* {
-  font-family: "Google Sans Text" !important;
-}
+@import url('urlbar.css');
+@import url('popup-search.css');
+* {font-family: "Google Sans Text" !important;}
 
 :root {
   --6: 6px;
@@ -15,12 +13,13 @@
   --tab-min-height: 28px !important;
   --tab-min-width: 28px !important;
   --toolbarbutton-border-radius: var(--8) !important;
-  --tab-border-radius: var(--8) !important;
+  --tab-border-radius: var(--8) !important;#TabsToolbar {
+  }
   --main: #77777770;
   --item: #77777730;
   --grey: #b8b8b8;
   --red: #ff000070;
-
+  
   --toolbarbutton-hover-background: transparent !important;
   --toolbarbutton-active-background: transparent !important;
 }
@@ -71,7 +70,7 @@ video {
 #back-button, #forward-button, #reload-button, #stop-reload-button,
 
 /* ❌ Menu Icons __ menuitem > .menu-iconic-left, */
-menu > .menu-iconic-left, .menu-right,
+ menu > .menu-iconic-left, .menu-right,
 
 /* ❌ Menu Separator */
 menuseparator, toolbarseparator,
@@ -98,9 +97,6 @@ menuitem[disabled], menu[disabled],
 /* ❌ Tab Mute Icon */
 .tab-icon-sound-label,
 .tab-icon-overlay:not([muted]):is([soundplaying]),
-
-/* ❌ Tab Close Btn */
-/* .tab-close-button:not([selected]), */
 
 /* ❌ Tab Pinned Text */
 .tab-label-container[pinned], #tab-label-container,
@@ -137,11 +133,11 @@ menuitem[disabled], menu[disabled],
 
 /* 🔗 Status Panel [Url Popup] */
 #statuspanel #statuspanel-label {
-  /*  font-weight: 600 !important; */
+/*  font-weight: 600 !important; */
   padding-inline: var(--6) !important;
   border-radius: var(--6) !important;
   margin: var(--8) !important;
-  /*  background-color: blue !important; */
+/*  background-color: blue !important; */
 }
 
 /* ℹ️ Findbar Ctrl+F */
@@ -187,21 +183,30 @@ findbar toolbarbutton {
   border-radius: var(--6);
   background-color: var(--grey);
   position: relative;
-  margin: var(--6) var(--6) 0 var(--6);
+  margin-inline: 11px !important;
+  margin-block: 6px 2px !important; 
   z-index: 3;
+  transition: 0.3s ease;
 }
+
 
 /* *️⃣ Toolbar Menu Item */
 menu[_moz-menuactive="true"]:not([disabled="true"]),
 menucaption[_moz-menuactive="true"]:not([disabled="true"]) {
   background-color: var(--main) !important;
-  border-radius: 4px;
+  border-radius: 4px !important;
+}
+#toolbar-menubar {
+
+  height: 26px !important;
+  background-color: var(--sidebar-border-color) !important;
 }
 #main-menubar {
-  margin: 4px;
+  margin: 2px !important;
+  padding: 2px !important;
   background-color: none;
   color: black;
-  height: 16px !important;
+  height: 22px !important;
 }
 
 /* *️⃣ Menu Popup Box */
@@ -218,7 +223,7 @@ menupopup {
 }
 
 #main-menubar menupopup {
-  margin: var(--6) var(--8) 0 -6px !important;
+    margin: var(--6) var(--8) 0 -6px !important;
 }
 
 menupopup > menuitem,
@@ -229,6 +234,7 @@ menupopup > menu {
   border-radius: var(--6) !important;
   padding-inline: var(--6) !important;
   margin: 0 !important;
+
 }
 .menu-accel {
   margin-inline: var(--6) 0 !important;
@@ -238,7 +244,7 @@ menupopup > menu {
 menupopup > menuitem[_moz-menuactive],
 menupopup > menu[_moz-menuactive] {
   background-color: var(--main) !important;
-  color: black !important;
+  color: black !important;  
 }
 #context-navigation {
   flex-direction: column !important;
@@ -251,34 +257,43 @@ menupopup > menu[_moz-menuactive] {
   border-radius: var(--6) !important;
   padding-inline: var(--6) !important;
   padding-block: 2px !important;
-  height: 28px !important;
+  height: 20px !important;
   width: 100% !important;
 }
 
 /* EXPERIMENTS */
-.titlebar-spacer[type="pre-tabs"] {
+ .titlebar-spacer[type="pre-tabs"] {
   width: 0px !important;
-}
-.titlebar-spacer[type="post-tabs"] {
+} 
+ .titlebar-spacer[type="post-tabs"] {
   width: 2px !important;
 }
 /* .tabbrowser-tab:first-of-type { 
   padding-left: 7px !important;
 } */
 
-#nav-bar-customization-target {
-  justify-content: right;
+#nav-bar {
+  background-color: transparent !important;
 }
 
+#nav-bar-customization-target {
+   justify-content: right;
+   }
+
 /* ❎ Tabs Multi-row ❎ */
+
+scrollbox[part][orient="horizontal"] > slot,
 scrollbox[part][orient="horizontal"] {
-  display: flex;
-  flex-wrap: wrap !important;
-  height: none !important;
+    display: flex;
+    flex-wrap: wrap !important;
+    height: none !important;
+}
+scrollbox[part][orient="horizontal"] > slot{
+    overflow-x: hidden;
 }
 
 #tabbrowser-tabs > * {
-  padding: 2px 2px 2px 9px !important;
+  padding: 0px 0px 0px 7px !important;
   margin: 3px !important;
 }
 
@@ -295,7 +310,7 @@ tab {
 }
 .tabbrowser-tab .tab-background:not([selected]) {
   background: var(--item) !important;
-  opacity: 60%;
+  opacity: 70%;
 }
 .tab-label-container:not([selected]) {
   opacity: 0.5 !important;
@@ -305,7 +320,7 @@ tab {
 }
 
 /* Tabs [Selected] */
-.tabbrowser-tab[selected="true"]:not([pinned]) {
+ .tabbrowser-tab[selected="true"]:not([pinned]) {
   min-width: 180px !important;
 }
 .tabbrowser-tab .tab-background[selected="true"] {
@@ -313,7 +328,7 @@ tab {
 }
 
 /* Tabs [Pinned] */
-.tabbrowser-tab[pinned="true"]:not([selected="true"]) {
+.tabbrowser-tab[pinned="true"]:not([selected=true]) {
   width: calc(30px + var(--8) - 4px) !important;
 }
 .tabbrowser-tab[selected="true"][pinned="true"] {
@@ -338,8 +353,17 @@ tab:not([pinned]):hover .tab-close-button {
 }
 .tab-close-button {
   margin: -6px !important;
-  opacity: 0.5;
   background-color: transparent !important;
+  opacity: 0 !important;
+  transition: 0.1s ease;
+}
+.tabbrowser-tab:hover { 
+  .tab-close-button:not(:hover) {
+    opacity: 0.4 !important;
+  }
+}
+.tab-close-button:hover {
+    opacity: 1 !important;
 }
 
 /* New Tab by MMB on Tabs Toolbar  */
@@ -357,9 +381,10 @@ tab:not([pinned]):hover .tab-close-button {
   height: unset !important;
 }
 #PersonalToolbar {
-  padding: 0 !important;
+  padding: 0px 0px 3px 7px !important;
   margin: 0 !important;
   max-height: none !important;
+  background-color: transparent !important;
 }
 #PlacesToolbarItems {
   display: flex;
@@ -373,6 +398,17 @@ tab:not([pinned]):hover .tab-close-button {
   color: grey !important;
   height: var(--tab-min-height);
 }
+#OtherBookmarks {
+  opacity: 0;
+  transition: 0.3s ease;
+}
+#OtherBookmarks:hover {
+  opacity: 1;
+}
+
+
+
+
 
 /* 🪟 Drag Window from urlbar */
 /* .urlbar-input-box,
@@ -383,14 +419,19 @@ tab:not([pinned]):hover .tab-close-button {
   cursor: default;
 } */
 
+
 #unified-extensions-button {
-  opacity: 10% !important;
+  opacity: 0% !important;
   padding-inline-end: 5px !important;
+  transition: 0.3s ease;
 }
+#unified-extensions-button:hover {
+   opacity: 100% !important;
+   }
 
 /* ⬇️ Downloads Indicator */
 #downloads-button {
-  position: fixed;
+  position: fixed ;
   top: 0;
   right: 0;
   width: var(--tab-min-height);
@@ -409,8 +450,7 @@ tab:not([pinned]):hover .tab-close-button {
   visibility: visible !important;
 }
 #downloads-indicator-progress-inner {
-  background: url("data:image/svg+xml;charset=UTF-8,%3csvg width='6' height='24' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='6' height='24' fill='dodgerblue'/%3e%3c/svg%3e")
-    bottom no-repeat !important;
+  background: url("data:image/svg+xml;charset=UTF-8,%3csvg width='6' height='24' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='6' height='24' fill='dodgerblue'/%3e%3c/svg%3e") bottom no-repeat !important;
   height: var(--download-progress-pcent) !important;
   border-radius: var(--6) !important;
 }
@@ -455,93 +495,85 @@ tab:not([pinned]):hover .tab-close-button {
 #urlbar-container #urlbar-input-container {
   opacity: 0;
 }
+#urlbar:is([focused], [open]) > #urlbar-background, #searchbar:focus-within {
+  background-color: var(--lwt-accent-color) !important;
+}
 .urlbarView {
-  background-color: var(
-    --lwt-accent-color
-  ); /* Pop-up background color (adaptive) */
-  /*  color: grey;                           Pop-up text color */
+  background-color: var(--lwt-accent-color) !important; /* Pop-up background color (adaptive) */
+/*  color: grey;                           Pop-up text color */
 }
 
 /*  Clean and tight extensions menu */
 #unified-extensions-panel #unified-extensions-view {
-  width: 100% !important; /*  For firefox v115.x */
+    width: 100% !important;  /*  For firefox v115.x */
 }
 
-#unified-extensions-view {
-  --uei-icon-size: 16px; /*  Change icon size */
-  --firefoxcss-number-of-extensions-in-a-row: 4; /*  Increase to the number of icons you want in one row */
+#unified-extensions-view{
+    --uei-icon-size: 16px; /*  Change icon size */
+    --firefoxcss-number-of-extensions-in-a-row: 4; /*  Increase to the number of icons you want in one row */
 }
 
-#unified-extensions-view:before {
+#unified-extensions-view:before{
   content: "Extensions";
   text-align: left !important;
   font-weight: bold !important;
   padding-top: 9px !important;
   padding-bottom: 4px !important;
   padding-left: 14px !important;
-}
+  }
 
 #unified-extensions-view .panel-header,
 #unified-extensions-view .panel-header .panel-header-icon,
 #unified-extensions-view .panel-header + toolbarseparator,
 #unified-extensions-view .panel-subview-body + toolbarseparator,
-#unified-extensions-view
-  #unified-extensions-manage-extensions
-  .toolbarbutton-icon,
+#unified-extensions-view #unified-extensions-manage-extensions .toolbarbutton-icon,
 #unified-extensions-view .unified-extensions-item-menu-button.subviewbutton,
-#unified-extensions-view
-  .unified-extensions-item-action-button
-  .unified-extensions-item-contents {
-  visibility: collapse !important;
+#unified-extensions-view .unified-extensions-item-action-button .unified-extensions-item-contents{
+    visibility: collapse !important;
 }
 
-#unified-extensions-view
-  #unified-extensions-manage-extensions
-  .toolbarbutton-text {
-  margin: 0 !important;
-  padding: 0 !important;
-  text-align: center !important;
-}
+#unified-extensions-view #unified-extensions-manage-extensions .toolbarbutton-text {
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: center !important;
+    }
 
 #unified-extensions-view .panel-subview-body {
-  padding: 2px !important;
+    padding: 2px !important;
 }
 
-#unified-extensions-view .unified-extensions-item .unified-extensions-item-icon,
+#unified-extensions-view .unified-extensions-item .unified-extensions-item-icon, 
 #unified-extensions-view .unified-extensions-item .toolbarbutton-badge-stack {
-  margin-inline-end: 0px !important;
+    margin-inline-end: 0px !important;
 }
 
 #unified-extensions-view #overflowed-extensions-list,
 #unified-extensions-view #unified-extensions-area,
 #unified-extensions-view .unified-extensions-list {
-  display: grid !important;
-  grid-template-columns: repeat(
-    var(--firefoxcss-number-of-extensions-in-a-row),
-    auto
-  );
-  justify-items: left !important;
-  align-items: left !important;
+    display: grid !important;
+    grid-template-columns: repeat(var(--firefoxcss-number-of-extensions-in-a-row),auto);
+    justify-items:left !important;
+    align-items:left !important;
 }
 
 #unified-extensions-view .unified-extensions-list .unified-extensions-item,
-#unified-extensions-view .unified-extensions-list {
-  max-width: max-content;
-  max-height: max-content;
+#unified-extensions-view .unified-extensions-list{
+     max-width: max-content;
+     max-height: max-content;
 }
 
 #unified-extensions-view #unified-extensions-area {
-  /*     padding-top: 0px !important; */
-  /*     padding-bottom: 0px !important; */
-  /*     border-bottom: 0px solid #aeaeae33 !important; */
+/*     padding-top: 0px !important; */
+/*     padding-bottom: 0px !important; */
+/*     border-bottom: 0px solid #aeaeae33 !important; */
 }
 
 #unified-extensions-view .unified-extensions-list {
-  /*     border-top: 1px solid #aeaeae33 !important; */
+/*     border-top: 1px solid #aeaeae33 !important; */
 }
 
-#wrapper-edit-controls:is([place="palette"], [place="panel"]) > #edit-controls,
-#wrapper-zoom-controls:is([place="palette"], [place="panel"]) > #zoom-controls,
-:is(panelview, #widget-overflow-fixed-list) .toolbaritem-combined-buttons {
+#wrapper-edit-controls:is([place="palette"], 
+[place="panel"]) > #edit-controls, #wrapper-zoom-controls:is([place="palette"], 
+[place="panel"]) > #zoom-controls, :is(panelview, #widget-overflow-fixed-list) .toolbaritem-combined-buttons {
   margin: 5px !important;
 }
