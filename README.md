@@ -1,17 +1,35 @@
-
-## [Firefox-Alphα](#features) 🗿 Super clear desktop browser
+## [Firefox-Alphαz](#features) 🗿 Super clear desktop browser
 
 <img src="assets/fire-alpha-adapt.gif" alt="firefox alpha preview animation adaptive colors" width="720" height="auto"/>
 
-Fast and minimal Firefox configuration with zero buttons, for simplicity and intuitive gesture controls. 
+_Fast and minimal Firefox configuration with (almost) zero buttons, for simplicity and intuitive gesture controls._
 
-### [<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Symbols/Down%20Arrow.png" alt="Down Arrow" width="25" height="25" align="top">&nbsp;`Install`](#install)&nbsp;[<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Alien%20Monster.png" alt="Alien Monster" width="25" height="25" align="top">&nbsp;`Report Bug`](https://github.com/Tagggar/Firefox-Alpha/issues)
+This is the theme I've used in the last eight months. It's a great theme for "out of sight, out of mind" type of person (me). It would make you motivated to close unneeded tabs, or live with 4+ row of tabs lol.
 
-### [<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Ghost.png" alt="Ghost" width="25" height="25" align="top"/>&nbsp;`Support`](#support)&nbsp;[<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/High%20Voltage.png" alt="High Voltage" width="25" height="25" align="top"/>&nbsp;`Projects`](https://tagggar.github.io)
+### What's the same...
+- It's still **clean**. No window control buttons.
+- **Multi-row Tabs** and **Multi-row Bookmarks** is still here.
+- **Find bar** still look like tab bar too. **Menu bar** still looks clean.
+- **Download** button is still on the same progress pill bar.
+- **Click twice on tab bar's empty area to add New Tab** is still supported.
+- You can still use Firefox theme addons with it, even better with extensions like Chameleon or Adaptive Tab Bar Color.
+
+### What's different...
+- **URLbar & Navigation bar is now separated from the tab bar.** 
+Some Firefox updates around March made it unfunctional - you can't click to edit your URLbar and it's only accessible via keyboard shortcuts. I decided to scrap the combined bar altogether, and.....
+- **I make the Navigation bar overlapping half of the last tab bar row.**
+Yeah. Where else should I move the much needed navbar, especially in multi-row tabs hahaha. But don't worry, the navbar is almost empty and won't change the way tabs looks heavily - I just had to slightly increase inline and top padding surrounding the tabs.
+- There's two buttons now on right side of the Navigation bar, both hidden by default, shown on hover:
+    - Extension button. You can't use shortcut to trigger this menu manually so I had to show it on the navbar.
+    - Show URL Bar button. Thanks to MrOtherGuy, the whole URLbar can be hidden and shown as a single button.
+    - I bring my Popup Search css from ArcWTF. I just love this mechanism so much and use it on all of my Firefox instance, even Zen. (I forgot where did I took the original code: ShyFox? Shina-Fox?)
+ 
+---
+
+
+### [<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Symbols/Down%20Arrow.png" alt="Down Arrow" width="25" height="25" align="top">&nbsp;`Install`](#install)
 
 ### Features:
-
-* [x] **[Combined Tab and Urlbar](#combined-tab-and-urlbar)**
 
 * [x] **[Multi-row Tabs](#multi-row-tabs)**
 
@@ -21,7 +39,7 @@ Fast and minimal Firefox configuration with zero buttons, for simplicity and int
 
 * [x] **[New Downloads Bar](#new-downloads-bar)**
 
-* [x] **[Simple Finbar](#simple-findbar)**
+* [x] **[Simple Findbar](#simple-findbar)**
 
 * [x] **[Adaptive Color](#adaptive-color)**
 
@@ -33,11 +51,7 @@ Fast and minimal Firefox configuration with zero buttons, for simplicity and int
 
 
 
-## Combined Tab and Urlbar
-
-<img src="assets/preview.gif" alt="firefox alpha preview animation" width="368" height="auto"/>
-
-Greatly enhances usability and provides a more intuitive browsing experience, eliminating the need for constant switching between UI sections:
+## Tab Navigations
 
 `LMB` to select URL on Active Tab;
 
@@ -203,9 +217,3 @@ The reliance on personalized suggestions may result in the formation of echo cha
 4. Restart Firefox and Enjoy
 
 &nbsp;
-
-## Support
-
-### [<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Microsoft-Teams-Animated-Emojis/master/Emojis/Travel%20and%20places/Star.png" alt="Star" width="25" height="25" align="top"/> Star Project](https://github.com/Tagggar/Firefox-Alpha) &nbsp; [<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Ghost.png" alt="Ghost" width="25" height="25" align="top"/> Buy a Coffee](https://www.buymeacoffee.com/taggar)
-
-### [<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/High%20Voltage.png" alt="High Voltage" width="25" height="25" align="top"/> More Projects](https://tagggar.github.io)
