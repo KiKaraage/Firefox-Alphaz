@@ -1,11 +1,11 @@
-/* Firefox Alphaz v 1.2 */
-/* Original theme by Tagggar, Add. credits to Suchacat */
-/* Current modification by KiKaraage */
-/* Source: https://github.com/KiKaraage/Firefox-Alphaz/ */
+/* Firefox Alphaz v 1.2.0 */
+/* Source: https://github.com/Tagggar/Firefox-Alpha/ */
 
 @import url('urlbar.css');
 @import url('popup-search.css');
-* {font-family: "Google Sans Text" !important;}
+
+/* Uncomment to activate font */
+/* * {font-family: "Google Sans Text" !important;} */ 
 
 :root {
   --6: 6px;
@@ -179,14 +179,22 @@ findbar toolbarbutton {
 }
 
 #toolbar-menubar {
-  height: 24px !important;
+  min-height: 24px !important;
   border-radius: var(--6);
-  background-color: var(--grey);
+  background-color: var(--sidebar-border-color) !important;
   position: relative;
-  margin-inline: 11px !important;
+  margin-inline: 9px !important;
   margin-block: 6px 2px !important; 
   z-index: 3;
-  transition: 0.3s ease;
+  transition: 0.3s ease !important;
+}
+
+#toolbar-menubar {
+  &[autohide="true"] {
+    :root[tabsintitlebar] #navigator-toolbox:not([tabs-hidden]) > & {
+      min-height: 0px !important;
+    }
+  }
 }
 
 
@@ -196,11 +204,7 @@ menucaption[_moz-menuactive="true"]:not([disabled="true"]) {
   background-color: var(--main) !important;
   border-radius: 4px !important;
 }
-#toolbar-menubar {
 
-  height: 26px !important;
-  background-color: var(--sidebar-border-color) !important;
-}
 #main-menubar {
   margin: 2px !important;
   padding: 2px !important;
@@ -274,6 +278,7 @@ menupopup > menu[_moz-menuactive] {
 
 #nav-bar {
   background-color: transparent !important;
+  margin: -22px 0 0 0 !important;
 }
 
 #nav-bar-customization-target {
@@ -293,17 +298,14 @@ scrollbox[part][orient="horizontal"] > slot{
 }
 
 #tabbrowser-tabs > * {
-  padding: 0px 0px 0px 7px !important;
+  padding: 4px 0px 0px 4px !important;
   margin: 3px !important;
 }
 
 tab {
   margin: 0 4px 0 0 !important;
 }
-:root:not([customizing]) #titlebar {
-  margin-top: 4px;
-  margin-bottom: -20px;
-}
+
 .tabbrowser-tab[fadein]:not([pinned]) {
   max-width: 130px !important;
   min-width: 80px !important;
@@ -381,11 +383,12 @@ tab:not([pinned]):hover .tab-close-button {
   height: unset !important;
 }
 #PersonalToolbar {
-  padding: 0px 0px 3px 7px !important;
+  padding: 0px 0px 0px 4px !important;
   margin: 0 !important;
   max-height: none !important;
   background-color: transparent !important;
 }
+
 #PlacesToolbarItems {
   display: flex;
   flex-wrap: wrap;
@@ -395,8 +398,12 @@ tab:not([pinned]):hover .tab-close-button {
   margin: 0 var(--8) var(--8) 0 !important;
   padding: 0 var(--6) !important;
   background: var(--item) !important;
-  color: grey !important;
+  opacity: 0.3;
   height: var(--tab-min-height);
+  transition: 0.3s ease;
+}
+#PlacesToolbarItems > .bookmark-item:hover {
+  opacity: 1 !important;
 }
 #OtherBookmarks {
   opacity: 0;
