@@ -1,11 +1,9 @@
-/* Firefox Alphaz v 1.2.0 */
+/* Firefox Alphaz v 1.2.1 */
 /* Source: https://github.com/Tagggar/Firefox-Alpha/ */
 
 @import url('urlbar.css');
 @import url('popup-search.css');
-
-/* Uncomment to activate font */
-/* * {font-family: "Google Sans Text" !important;} */ 
+* {font-family: "Google Sans Text" !important;}
 
 :root {
   --6: 6px;
@@ -312,10 +310,13 @@ tab {
 }
 .tabbrowser-tab .tab-background:not([selected]) {
   background: var(--item) !important;
-  opacity: 70%;
+  opacity: 80%;
 }
 .tab-label-container:not([selected]) {
   opacity: 0.5 !important;
+}
+.tab-context-line{
+  display: none !important;
 }
 .tab-content {
   padding-inline: var(--6) !important;
@@ -327,6 +328,13 @@ tab {
 }
 .tabbrowser-tab .tab-background[selected="true"] {
   background: var(--main) !important;
+}
+#tabbrowser-tabs {
+  & .tabbrowser-tab { 
+    &[selected] .tab-background {
+      border-right: 3px solid var(--identity-icon-color) !important;
+    }
+  }
 }
 
 /* Tabs [Pinned] */
@@ -354,7 +362,7 @@ tab:not([pinned]):hover .tab-close-button {
   display: flex !important;
 }
 .tab-close-button {
-  margin: -6px !important;
+  margin: -5px !important;
   background-color: transparent !important;
   opacity: 0 !important;
   transition: 0.1s ease;
